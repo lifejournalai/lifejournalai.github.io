@@ -1,0 +1,1221 @@
+/* =========================================================
+   LIFE JOURNAL AI WEBSITE
+   Main stylesheet
+========================================================= */
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: #080808;
+}
+
+body {
+    font-family: "Outfit", Arial, sans-serif;
+    background: #080808;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 68px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 32px;
+
+    background: rgba(8, 8, 8, 0.88);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+
+.brand img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+
+    margin-left: auto;
+    margin-right: 30px;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #a8a8a8;
+}
+
+.desktop-nav a {
+    transition: color 0.2s ease;
+}
+
+.desktop-nav a:hover {
+    color: #ffffff;
+}
+
+.header-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+    color: #080808;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.header-button:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 90px 24px 95px;
+
+    background: #080808;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1050px;
+}
+
+.hero h1 {
+    max-width: 980px;
+
+    margin: 0 auto 30px;
+
+    font-size: clamp(62px, 6.4vw, 92px);
+    line-height: 1.03;
+
+    font-weight: 500;
+
+    letter-spacing: -3.2px;
+
+    color: #ffffff;
+}
+
+.mobile-break {
+    display: none;
+}
+
+.hero p {
+    max-width: 660px;
+
+    margin: 0 auto 32px;
+
+    font-size: 19px;
+    line-height: 1.55;
+
+    font-weight: 400;
+
+    color: #969696;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+}
+
+.download-button,
+.explore-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 148px;
+
+    padding: 14px 22px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.download-button {
+    background: #ffffff;
+    color: #080808;
+}
+
+.explore-button {
+    background: #161616;
+    color: #ffffff;
+    border: 1px solid #2c2c2c;
+}
+
+.download-button:hover,
+.explore-button:hover {
+    transform: translateY(-2px);
+}
+
+.explore-button:hover {
+    background: #1d1d1d;
+}
+
+
+/* =========================================================
+   PAGE LOAD ANIMATION
+   One simultaneous entrance animation.
+========================================================= */
+
+.page-load {
+    animation: pageEnter 0.8s ease-out both;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   APP PREVIEW SECTION
+========================================================= */
+
+.app-preview {
+    padding: 85px 0 120px;
+
+    scroll-margin-top: 68px;
+
+    background: #080808;
+}
+
+.preview-container {
+    width: min(1180px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 38px;
+}
+
+.preview-item {
+    min-width: 0;
+}
+
+.preview-text {
+    padding: 0 8px 28px;
+}
+
+.preview-text h2 {
+    margin-bottom: 12px;
+
+    font-size: 34px;
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+.preview-text p {
+    max-width: 470px;
+
+    font-size: 16px;
+    line-height: 1.55;
+
+    font-weight: 400;
+
+    color: #929292;
+}
+
+.phone-card {
+    position: relative;
+
+    height: 604px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 0;
+
+    overflow: hidden;
+
+    border-radius: 38px;
+
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, 0.24),
+        0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.purple-card {
+    background: linear-gradient(
+        135deg,
+        #c22bd6 0%,
+        #d34ef2 100%
+    );
+}
+
+.orange-card {
+    background: linear-gradient(
+        135deg,
+        #b86f48 0%,
+        #7f3f22 100%
+    );
+}
+
+/* Different background color for each additional screenshot card */
+.preview-item:nth-child(3) .phone-card {
+    background: linear-gradient(
+        135deg,
+        #3288d8 0%,
+        #1f4f9f 100%
+    );
+}
+
+.preview-item:nth-child(4) .phone-card {
+    background: linear-gradient(
+        135deg,
+        #4dbb83 0%,
+        #23704d 100%
+    );
+}
+
+.preview-item:nth-child(5) .phone-card {
+    background: linear-gradient(
+        135deg,
+        #f0a33a 0%,
+        #b55a16 100%
+    );
+}
+
+.preview-item:nth-child(6) .phone-card {
+    background: linear-gradient(
+        135deg,
+        #39b9c9 0%,
+        #176c83 100%
+    );
+}
+
+.preview-item:nth-child(7) .phone-card {
+    background: linear-gradient(
+        135deg,
+        #8d68e8 0%,
+        #51329b 100%
+    );
+}
+
+.blue-card {
+    background: linear-gradient(135deg, #3288d8 0%, #1f4f9f 100%);
+}
+
+.green-card {
+    background: linear-gradient(135deg, #4dbb83 0%, #23704d 100%);
+}
+
+/* =========================================================
+   SUPPORTING FEATURE CARDS
+========================================================= */
+
+.feature-cards-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 115px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    min-height: 184px;
+    padding: 34px 34px 30px;
+    border-radius: 25px;
+    background: #151515;
+    border: 1px solid rgba(255, 255, 255, 0.035);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card h3 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+}
+
+.feature-card p {
+    max-width: 360px;
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 400;
+    color: #929292;
+}
+
+.phone-frame {
+    position: relative;
+
+    width: 220px;
+    max-width: 52%;
+
+    padding: 9px;
+
+    border-radius: 43px;
+
+    background: #050505;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.48),
+        0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.phone-frame::before {
+    content: "";
+
+    position: absolute;
+
+    top: 11px;
+    left: 50%;
+
+    width: 74px;
+    height: 7px;
+
+    transform: translateX(-50%);
+
+    border-radius: 20px;
+
+    background: #111111;
+
+    z-index: 3;
+}
+
+.phone-screen {
+    overflow: hidden;
+
+    border-radius: 35px;
+
+    background: #000000;
+
+    aspect-ratio: 9 / 19.5;
+}
+
+.phone-screen img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   DOWNLOAD
+========================================================= */
+
+.download-section {
+    padding: 115px 24px 125px;
+
+    scroll-margin-top: 68px;
+
+    background: #080808;
+}
+
+.download-heading {
+    text-align: center;
+
+    margin-bottom: 42px;
+}
+
+.download-heading h2 {
+    margin-bottom: 10px;
+
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.download-heading p {
+    font-size: 18px;
+    line-height: 1.5;
+
+    color: #929292;
+}
+
+.download-card {
+    position: relative;
+
+    width: min(760px, 100%);
+    min-height: 460px;
+
+    margin: 0 auto;
+
+    padding: 38px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border-radius: 34px;
+
+    background: linear-gradient(
+        135deg,
+        #6c4df5 0%,
+        #7d5bfb 52%,
+        #6d4df5 100%
+    );
+}
+
+.download-badge {
+    margin-bottom: 18px;
+
+    padding: 7px 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+}
+
+.download-logo {
+    width: 70px;
+    height: 70px;
+
+    margin-bottom: 18px;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.download-card h3 {
+    margin-bottom: 7px;
+
+    font-size: 30px;
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    letter-spacing: -0.7px;
+}
+
+.download-card-subtitle {
+    margin-bottom: 13px;
+
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.download-card-description {
+    max-width: 480px;
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.download-apk-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 22px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+    color: #080808;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.download-apk-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-section {
+    padding: 110px 24px 120px;
+
+    scroll-margin-top: 68px;
+
+    background: #080808;
+}
+
+.faq-heading {
+    text-align: center;
+
+    margin-bottom: 48px;
+}
+
+.faq-heading h2 {
+    margin-bottom: 10px;
+
+    font-size: clamp(40px, 5vw, 62px);
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.faq-heading p {
+    font-size: 18px;
+    line-height: 1.5;
+
+    color: #929292;
+}
+
+.faq-list {
+    width: min(850px, 100%);
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #242424;
+}
+
+.faq-question {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 23px 4px;
+
+    border: 0;
+
+    background: transparent;
+    color: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.faq-icon {
+    flex: 0 0 auto;
+
+    font-size: 24px;
+    font-weight: 300;
+
+    color: #8d8d8d;
+
+    transition: transform 0.2s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 0 40px 22px 4px;
+
+    font-size: 15px;
+    line-height: 1.65;
+
+    color: #909090;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    padding: 70px 32px 25px;
+
+    border-top: 1px solid #1d1d1d;
+
+    background: #080808;
+}
+
+.footer-main {
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 45px;
+}
+
+.footer-brand .brand {
+    margin-bottom: 14px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: #777777;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column h4 {
+    margin-bottom: 4px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #ffffff;
+}
+
+.footer-column a {
+    width: fit-content;
+
+    font-size: 13px;
+    color: #777777;
+
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    width: min(1180px, 100%);
+
+    margin: 55px auto 0;
+    padding-top: 20px;
+
+    border-top: 1px solid #1d1d1d;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #666666;
+}
+
+
+/* =========================================================
+   TABLET / NARROW DESKTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .site-header {
+        padding: 0 22px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        align-items: flex-start;
+
+        padding: 100px 20px 90px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero h1 {
+        font-size: clamp(50px, 8vw, 72px);
+        letter-spacing: -2.4px;
+    }
+
+    .hero p {
+        max-width: 560px;
+        font-size: 18px;
+    }
+
+    .preview-container {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .phone-card {
+        height: 680px;
+    }
+
+    .feature-cards-container {
+        width: calc(100% - 44px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        height: 58px;
+        padding: 0 16px;
+    }
+
+    .brand {
+        gap: 0;
+    }
+
+    .brand span {
+        display: none;
+    }
+
+    .brand img {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .header-button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        min-height: auto;
+
+        padding: 100px 20px 90px;
+
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        max-width: 440px;
+    }
+
+    .hero h1 {
+        max-width: 440px;
+
+        margin-bottom: 28px;
+
+        font-size: clamp(41px, 10.8vw, 54px);
+        line-height: 1.03;
+
+        font-weight: 500;
+
+        letter-spacing: -1.7px;
+    }
+
+    .mobile-break {
+        display: block;
+    }
+
+    .hero p {
+        max-width: 390px;
+
+        margin-bottom: 29px;
+
+        font-size: 17px;
+        line-height: 1.52;
+
+        font-weight: 400;
+
+        color: #989898;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .download-button,
+    .explore-button {
+        width: 100%;
+        max-width: 390px;
+
+        padding: 15px 20px;
+
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURE PREVIEWS
+    ----------------------------------------------------- */
+
+    .app-preview {
+        padding: 45px 0 85px;
+
+        scroll-margin-top: 58px;
+    }
+
+    .preview-container {
+        width: calc(100% - 50px);
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .preview-text {
+        padding: 0 0 24px;
+    }
+
+    .preview-text h2 {
+        font-size: 28px;
+        letter-spacing: -0.7px;
+    }
+
+    .preview-text p {
+        font-size: 15px;
+    }
+
+    .phone-card {
+        height: 520px;
+
+        border-radius: 35px;
+
+        padding-top: 0;
+
+        box-shadow:
+            0 24px 55px rgba(0, 0, 0, 0.24),
+            0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .phone-frame {
+        width: 220px;
+        max-width: 52%;
+
+        padding: 8px;
+
+        border-radius: 38px;
+    }
+
+    .phone-frame::before {
+        top: 11px;
+        width: 74px;
+        height: 7px;
+    }
+
+    .phone-screen {
+        border-radius: 35px;
+    }
+
+
+    .feature-cards-container {
+        width: calc(100% - 36px);
+        margin-top: 75px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .feature-card {
+        min-height: 0;
+        padding: 30px 30px 28px;
+        border-radius: 24px;
+    }
+
+    .feature-card h3 {
+        font-size: 23px;
+    }
+
+    .feature-card p {
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       DOWNLOAD
+    ----------------------------------------------------- */
+
+    .download-section {
+        padding: 100px 20px 110px;
+    }
+
+    .download-heading {
+        margin-bottom: 38px;
+    }
+
+    .download-heading h2 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+    }
+
+    .download-heading p {
+        font-size: 17px;
+    }
+
+    .download-card {
+        min-height: 420px;
+
+        padding: 28px 22px;
+
+        border-radius: 26px;
+    }
+
+
+    /* -----------------------------------------------------
+       FAQ
+    ----------------------------------------------------- */
+
+    .faq-section {
+        padding: 90px 20px 100px;
+    }
+
+    .faq-heading {
+        margin-bottom: 35px;
+    }
+
+    .faq-heading h2 {
+        font-size: 40px;
+        letter-spacing: -1.4px;
+    }
+
+    .faq-heading p {
+        font-size: 16px;
+    }
+
+    .faq-question {
+        padding: 20px 2px;
+
+        font-size: 16px;
+    }
+
+    .faq-answer p {
+        padding-left: 2px;
+        padding-right: 25px;
+
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .site-footer {
+        padding: 55px 20px 22px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 38px 25px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .download-button,
+    .explore-button {
+        max-width: 100%;
+    }
+
+    .phone-card {
+        height: 520px;
+    }
+
+    .phone-frame {
+        width: 230px;
+        max-width: 230px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .page-load {
+        animation: none;
+    }
+
+    .download-button,
+    .explore-button,
+    .header-button,
+    .download-apk-button {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   FINAL POLISH — SUPPORTING CARD HOVER RESPONSE
+========================================================= */
+
+.feature-card {
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   FINAL POLISH — LOGO REPLAY
+   The existing .page-load animation is reused by JavaScript.
+========================================================= */
+
+.brand {
+    -webkit-tap-highlight-color: transparent;
+}
